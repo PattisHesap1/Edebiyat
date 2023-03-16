@@ -6,12 +6,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-slate-200">
+    <nav
+  class="flex-no-wrap relative flex w-full items-center justify-between bg-slate-400 py-5 shadow-xl shadow-inner shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start"
+  data-te-navbar-ref>
+  <div class="flex w-full flex-wrap items-center justify-between px-6 py-0">
+    <div
+      class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+      id="navbarSupportedContent1"
+      data-te-collapse-item>
+      
+      <h1 class="font-bold text-2xl antialiased text-stone-700">Muammer Dereli <span class="italic font-medium px-1 mx-1"> Edebiyat </span></h1>
+      <!-- Left links -->
+      <ul
+        class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
+        data-te-navbar-nav-ref>
+        <li class="lg:pr-2 mx-9" data-te-nav-item-ref>
+          <a
+            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+            href="#"
+            data-te-nav-link-ref
+            >Dashboard</a
+          >
+        </li>
+        <li class="lg:pr-2 mx-9" data-te-nav-item-ref>
+          <a
+            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            href="#"
+            data-te-nav-link-ref
+            >Team</a
+          >
+        </li>
+        <li class="lg:pr-2 mx-9" data-te-nav-item-ref>
+          <a
+            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            href="#"
+            data-te-nav-link-ref
+            >Projects</a
+          >
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+</nav>
+    <div class="container mx-auto">
+        <div class="my-6">
+            <h2 class="text-stone-700 font-mono text-8xl italic font-weight-sm  inline" id="calendar">{{AY}}</h2>
+            <p class="text-stone-700 font-mono text-xl italic font-weight-xl inline">Ayında Muammer Derelide,</p>
+        </div>
+        <div class="columns-2 py-7">
+            <div class="" style="border-right: 3px rgb(51 65 85)">
+                <h3 class="text-stone-700 font-mono text-xl font-weight-bold">Bu Ayın Kitabı,</h3>
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <img src="/media/{{KITAP.foto}}" alt="" class="rounded-t-lg">
+                </div>
+                <div>
+                    <h4 class="text-stone-700 font-mono text-xl italic font-weight-xl relative"></h4>
+                </div>
+            </div>
+            <div class="" style="border-left: 3px rgb(51 65 85)">
+                <h3 class="text-stone-700 font-mono text-xl font-weight-bold">Bu Ay Doğan Ünlü Yazarlar,</h3>
+            </div>
+        </div>
+    </div>
 
-    
     <script src="{% static 'index.js' %}" charset="utf-8"></script>
 </body>
 </html>
