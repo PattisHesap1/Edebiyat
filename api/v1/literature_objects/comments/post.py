@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.http import HttpResponse, JsonResponse, HttpRequest
 from index.models import LiteratureObject, Comment, LiteratureObject, LiteratureObject, Creator, Vote, filter_comment
-import time
+import datetime
 from util import post_requests_only, error_response, get_requests_only
 
 from django.views.decorators.csrf import csrf_exempt

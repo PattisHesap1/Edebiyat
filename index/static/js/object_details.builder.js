@@ -29,6 +29,7 @@ function main() {
 	
 	const comments_post = document.getElementById("comments_post")
 	const is_spoilers_element = document.getElementById("is_contains_spoilers")
+	const author_name_element = document.getElementById("comments_post_username")
 	const is_anonymous_element = document.getElementById("is_anonymous")
 	const comment_content_element = document.getElementById("comments_post_content")
 	const comment_post_button = document.getElementById("comments_post_send")
@@ -68,6 +69,10 @@ function main() {
 	})
 	is_spoilers_element.addEventListener("bl-switch-toggle", (e) => {
 		comment["is_spoilers"] = e.detail
+	})
+	author_name_element.addEventListener("bl-input", (e) => {
+		console.log(comment)
+		comment["author"] = comment_content_element.getAttribute("value")
 	})
 	comment_content_element.addEventListener("bl-input", (e) => {
 		comment["content"] = comment_content_element.getAttribute("value")

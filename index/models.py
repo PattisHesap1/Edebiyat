@@ -81,7 +81,7 @@ class Comment(VoteableObject):
 		editable=False, verbose_name="Yorum Yapılan Eser", default=0)
 	author_name = models.CharField(max_length=30, verbose_name="Kullanıcı Adı")
 	content = models.TextField(max_length=1000, verbose_name="Yorum İçeriği")
-	created_at = models.DateTimeField(auto_created=True, editable=True)
+	created_at = models.DateTimeField(auto_now_add=True, editable=True)
 	approved_by = models.CharField(choices=((None,"None"),("phasenull","phasenull"),("admin","admin")),
 		max_length=30, default=None, editable=True, verbose_name="Onaylayan Yetkili", null=True, blank=True)
 	hide_name = models.BooleanField(
