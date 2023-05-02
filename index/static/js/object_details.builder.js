@@ -24,9 +24,76 @@ function refresh_comments() {
 		}
 	}
 }
+function handle_book_votes() {
+	const upvotes = document.getElementsByClassName("upvotes")[0]
+	const downvotes = document.getElementsByClassName("downvotes")[0]
+	const upvote = document.getElementsByClassName("upvote")[0]
+	const downvote = document.getElementsByClassName("downvote")[0]
+	// function vote_book(value) {
+	// 	const get_old_vote = new Promise((resolve, reject) => {
+	// 		const is_voted_http = new XMLHttpRequest()
+	// 		is_voted_http.open("GET", `/api/v1/literature_objects/${URL[2]}/comments/-1/is_voted`)
+	// 		is_voted_http.send()
+	// 		is_voted_http.onload = (e) => {
+	// 			if (is_voted_http.status == 200 && is_voted_http.responseText) {
+	// 				const response = JSON.parse(is_voted_http.responseText)
+	// 				if (response.success) {
+	// 					if (response.data.value === value) {
+	// 						value = 0
+	// 					}
+	// 					resolve()
+	// 				} else {
+	// 					reject("hata ", response)
+	// 				}
+	// 			} else {
+	// 				reject("hata")
+	// 			}
+	// 		}
+	// 	})
+	// 	get_old_vote.then(() => {
+	// 		const http_request = new XMLHttpRequest()
+	// 		http_request.open("POST", `/api/v1/literature_objects/${URL[2]}/comments/-1/vote`)
+	// 		http_request.setRequestHeader("vote-value", value)
+	// 		http_request.send()
+	// 		http_request.onload = (e) => {
+	// 			if (http_request.status == 200 && http_request.responseText) {
+	// 				const data = JSON.parse(http_request.responseText)
+	// 				if (data.success) {
+	// 					console.log(`oy verildi ${value}, ${data}`)
+	// 					upvotes.innerText = data.votes.up
+	// 					downvotes.innerText = data.votes.down
+	// 					if (value === 0) {
+	// 						upvote.src = "/static/thumbs_up_empty.png"
+	// 						downvote.src = "/static/thumbs_down_empty.png"
+	// 					} else if (value === 1) {
+	// 						upvote.src = "/static/thumbs_up.png"
+	// 						downvote.src = "/static/thumbs_down_empty.png"
+	// 					} else if (value === -1) {
+	// 						upvote.src = "/static/thumbs_up_empty.png"
+	// 						downvote.src = "/static/thumbs_down.png"
+	// 					}
+	// 				} else {
+	// 					console.log("hata ", data)
+	// 				}
+	// 			} else {
+	// 				console.log("hata")
+	// 			}
+	// 		}
+	// 	})
+	// }
+	// upvote.addEventListener("click",(e)=>{
+	// 	vote_book(1)
+	// })
+	// downvote.addEventListener("click",(e)=>{
+	// 	vote_book(-1)
+	// })
+
+		
+
+}
 function main() {
-	const upvotes = document.getElementsByClassName("upvote")
-	const downvotes = document.getElementsByClassName("downvote")
+	handle_book_votes()
+
 	refresh_comments()
 	const comments_post = document.getElementById("comments_post")
 	const comment_author = document.getElementById("comments_post_author")
@@ -56,24 +123,6 @@ function main() {
 				new Comment(data.data)
 				return
 			}
-			// something went wrong
-			// latest_alert?.remove()
-			// const error_message = Translated(data.error)
-			// const error = data.error
-			// console.log(error, ":", error_message)
-			// const new_alert = document.createElement("alert")
-			// new_alert.setAttribute("variant", "danger")
-			// new_alert.setAttribute("caption", Translated("error") + ": " + error)
-			// new_alert.innerText = error_message
-			// const button = document.createElement("button")
-			// button.setAttribute("slot", "action-secondary")
-			// button.innerText = Translated("ok")
-			// new_alert.appendChild(button)
-			// latest_alert = new_alert
-			// button.addEventListener("click", (e) => {
-				// new_alert.remove()
-			// })
-			// comments_post.appendChild(new_alert)
 		}
 	})
 }
